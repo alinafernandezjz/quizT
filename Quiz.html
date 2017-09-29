@@ -6,6 +6,7 @@
 		<link href="quiz.css" rel="stylesheet">
 	</head>
 	<body>
+		<div id="quizContainer" class="container">
 			<div id="titulo" class="questionTitle"></div>
 			<div id="question" class="question"></div>
 			<div class="optionContainer">
@@ -13,11 +14,14 @@
 				<label class="option"><input type="radio" name="option" value="2" /> <span id="opt2"></span></label>
 				<label class="option"><input type="radio" name="option" value="3" /> <span id="opt3"></span></label>
 			</div>
-			<div>
+			<div style="padding-right:5cm">
 				<button id="nextButton" class="next-btn" onclick="loadNextQuestion();">Siguiente</button>
+				<button id="nextButton" class="next-btn" onclick="resultados();">Terminar</button>
 			</div>
-
-		<div id="result" class="container result" style="display:none;">
+		</div>
+		<div id="result" class="resultados" style="display:none;">
+			<img id="picture">
+			<p id = "message"></p>
 		</div>
 		<script src="question.js"></script>
 		<script src="quiz-script.js"></script>

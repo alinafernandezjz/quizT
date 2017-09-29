@@ -10,8 +10,12 @@
 
 body{
 	font-family: myFont;
-	background: #B0CFCB;
+	background: linear-gradient(#B0CFCB, #bae0e7);
+  background-size: cover;
 	font-weight: 100;
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
 }
 
 form{
@@ -27,8 +31,8 @@ p{
 	//font-weight: 0;
 }
 
-.container{
-	/*height: 330px;
+.resultados{
+	height: 330px;
 	width: 1000px;
 	position: absolute;
 	top:50%;
@@ -37,7 +41,9 @@ p{
 	background: rgba(255, 255, 255, 0.5);
 	padding: 20px;
 	border: 1px solid #08038C;
-	box-shadow: 0 0 8px 3px #fff;*/
+	box-shadow: 0 0 8px 3px #fff;
+  font-family: myFont;
+  font-size: 80px;
 }
 
 .title{
@@ -81,8 +87,9 @@ p{
 }
 
 .option:hover{
-	background: #A8DEE0;
+	background: #325a63;
 	color: #f6f6f6;
+  font-weight: bold;
 }
 
 .optionContainer{
@@ -117,6 +124,11 @@ p{
 	font-family: rounded;
 	font-size: 35px;
 
+}
+
+.start-btn:hover{
+	background: #F791C2;
+	color: #F3F3F3;
 }
 
 .next-btn:hover{

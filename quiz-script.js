@@ -11,6 +11,8 @@ var opt3 = document.getElementById('opt3');
 //var opt4 = document.getElementById('opt4');
 var nextButton = document.getElementById('nextButton');
 var resultCont = document.getElementById('result');
+var pictures = ["img/win.gif", "img/meh.jpeg", "img/lose.gif"];
+var messages = ["Great job!", "That's just okay", "You really need to do better"];
 
 function loadQuestion (questionIndex) {
 	var q = questions[questionIndex];
@@ -21,6 +23,24 @@ function loadQuestion (questionIndex) {
 	opt3.textContent = q.option3;
 	//opt4.textContent = q.option4;
 };
+function resultados(){
+	container.style.display = 'none';
+	resultCont.style.display = '';
+	resultCont.textContent = 'Tu Puntuación: ' + score;
+	if(score<=10){
+		console.log("hola");
+		document.getElementById("picture").src = pictures[0];
+		document.getElementById("message").innerHTML = messages[0];
+	}else if(score<=30){
+		document.getElementById("picture").src = pictures[1];
+		document.getElementById("message").innerHTML = messages[1];
+	}else{
+		document.getElementById("picture").src = pictures[2];
+		document.getElementById("message").innerHTML = messages[2];
+	}
+
+	return;
+}
 
 function loadNextQuestion () {
 	var selectedOption = document.querySelector('input[type=radio]:checked');
@@ -41,7 +61,19 @@ function loadNextQuestion () {
 	if(currentQuestion == totQuestions){
 		container.style.display = 'none';
 		resultCont.style.display = '';
-		resultCont.textContent = 'Tu Puntuacion: ' + score;
+		resultCont.textContent = 'Tu Puntuación: ' + score;
+		if(score<=10){
+			console.log("hola");
+			document.getElementById("picture").src = pictures[0];
+			document.getElementById("message").innerHTML = messages[0];
+		}else if(score<=30){
+			document.getElementById("picture").src = pictures[1];
+			document.getElementById("message").innerHTML = messages[1];
+		}else{
+			document.getElementById("picture").src = pictures[2];
+			document.getElementById("message").innerHTML = messages[2];
+		}
+
 		return;
 	}
 	loadQuestion(currentQuestion);
